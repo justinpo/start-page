@@ -1,7 +1,8 @@
 #StartPage {
     background-color: #222222;
     color: #fff;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
 .StartPage {
