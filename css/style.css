@@ -1,0 +1,55 @@
+#StartPage {
+    background-color: #222222;
+    color: #fff;
+    font-family: 'Roboto';
+}
+
+.StartPage {
+    margin: 20vh;
+}
+
+.StartPage_info {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 72px;
+    font-weight: 500;
+}
+
+.StartPage_time {
+    font-size: 9rem;
+    margin-right: 36px;
+}
+
+.StartPage_date {
+    font-size: 2.25rem;
+    opacity: 0.7;
+}
+
+.StartPage_nav {
+    display: flex;
+}
+
+.StartPage_nav_group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+}
+
+.StartPage_nav_group_title {
+    color: #bb70f7;
+    text-transform: uppercase;
+    border-bottom: 2px dotted #bb70f7;
+    width: fit-content;
+    margin-bottom: 24px;
+}
+
+.StartPage_nav_group_link {
+    color: #fff;
+    opacity: 0.6;
+    text-decoration: none;
+    margin-bottom: 24px;
+}
+
+.StartPage_nav_group_link:hover {
+    opacity: 0.9;
+}
