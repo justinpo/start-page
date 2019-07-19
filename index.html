@@ -12,69 +12,86 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- Font -->
     <link rel="stylesheet" href="css/fonts.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="css/material-icons.css" />
   </head>
 
   <body id="StartPage">
     <main class="StartPage">
-      <section class="StartPage_info">
-        <h1 class="StartPage_time" id="time"></span></h1>
-        <h4 class="StartPage_date" id="date"></span></h4>
+      <section class="StartPage_infoContainer">
+        <div class="StartPage_info">
+          <h1 class="StartPage_time" id="time"></span></h1>
+          <h4 class="StartPage_date" id="date"></span></h4>
+        </div>
+        <nav class="StartPage_nav">
+          <div class="StartPage_nav_group">
+            <p class="StartPage_nav_group_title">Leisure</p>
+            <a class="StartPage_nav_group_link" href="http://www.facebook.com"
+              >Facebook</a
+            >
+            <a class="StartPage_nav_group_link" href="http://www.twitter.com"
+              >Twitter</a
+            >
+            <a class="StartPage_nav_group_link" href="http://www.youtube.com"
+              >Youtube</a
+            >
+            <a class="StartPage_nav_group_link" href="http://www.reddit.com"
+              >Reddit</a
+            >
+            <a class="StartPage_nav_group_link" href="http://www.netflix.com"
+              >Netflix</a
+            >
+          </div>
+          <div class="StartPage_nav_group">
+            <p class="StartPage_nav_group_title">Productivity</p>
+            <a class="StartPage_nav_group_link" href="http://www.github.com"
+              >GitHub</a
+            >
+            <a class="StartPage_nav_group_link" href="http://www.scrummate.com"
+              >ScrumMate</a
+            >
+            <a class="StartPage_nav_group_link" href="http://app.codechum.com"
+              >CodeChum</a
+            >
+          </div>
+          <div class="StartPage_nav_group">
+            <p class="StartPage_nav_group_title">GitHub</p>
+            <a class="StartPage_nav_group_link" href="https://github.com/users/JemarJudeMaranga/projects/2"
+            >Projects</a
+            >
+            <a class="StartPage_nav_group_link" href="https://github.com/users/JemarJudeMaranga/codechum"
+            >CodeChum - V2</a
+            >
+            <a class="StartPage_nav_group_link" href="https://github.com/users/JemarJudeMaranga/codechum-app"
+            >CodeChum - V3</a
+            >
+          </div>
+          <div class="StartPage_nav_group">
+            <p class="StartPage_nav_group_title">School</p>
+            <a
+              class="StartPage_nav_group_link"
+              href="http://www.vle.upcebu.edu.ph"
+              >VLE</a
+            >
+            <a class="StartPage_nav_group_link" href="http://sais.up.edu.ph"
+              >SAIS</a
+            >
+          </div>
+        </nav>
       </section>
-      <nav class="StartPage_nav">
-        <div class="StartPage_nav_group">
-          <p class="StartPage_nav_group_title">Productivity</p>
-          <a class="StartPage_nav_group_link" href="http://www.github.com"
-            >GitHub</a
-          >
-          <a class="StartPage_nav_group_link" href="http://www.scrummate.com"
-            >ScrumMate</a
-          >
-        </div>
-        <div class="StartPage_nav_group">
-          <p class="StartPage_nav_group_title">School</p>
-          <a
-            class="StartPage_nav_group_link"
-            href="http://www.vle.upcebu.edu.ph"
-            >VLE</a
-          >
-          <a class="StartPage_nav_group_link" href="http://sais.up.edu.ph"
-            >SAIS</a
-          >
-        </div>
-        <div class="StartPage_nav_group">
-          <p class="StartPage_nav_group_title">Social</p>
-          <a class="StartPage_nav_group_link" href="http://www.facebook.com"
-            >Facebook</a
-          >
-          <a class="StartPage_nav_group_link" href="http://www.twitter.com"
-            >Twitter</a
-          >
-          <a class="StartPage_nav_group_link" href="http://www.reddit.com"
-            >Reddit</a
-          >
-          <a class="StartPage_nav_group_link" href="http://www.instagram.com"
-            >Instagram</a
-          >
-        </div>
-        <div class="StartPage_nav_group">
-          <p class="StartPage_nav_group_title">Reddit</p>
-          <a class="StartPage_nav_group_link" href="http://www.reddit.com/r/nba"
-            >NBA</a
-          >
-          <a
-            class="StartPage_nav_group_link"
-            href="http://www.reddit.com/r/programmerhumor"
-            >ProgrammerHumor</a
-          >
-          <a
-            class="StartPage_nav_group_link"
-            href="http://www.reddit.com/r/tifu"
-            >TIFU</a
-          >
-        </div>
-      </nav>
+      <section class="StartPage_notesContainer">
+        <form class="StartPage_form">
+            <textarea placeholder="Add a note" id="input" class="StartPage_textArea"></textarea>
+            <button type="button" id="addButton" class="StartPage_button">Add</button>
+        </form>
+        <h3 class="StartPage_list_title">Notes</h3>
+        <ul id="taskList" class="StartPage_list">
+        </ul>
+      </section>
     </main>
 
+    <!-- JavaScript -->
     <script src="js/index.js"></script>
+    <script src="js/notes.js"></script>
   </body>
 </html>
