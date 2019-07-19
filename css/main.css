@@ -70,7 +70,7 @@
 .StartPage_notesContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 24px;
 }
 
 .StartPage_textArea {
