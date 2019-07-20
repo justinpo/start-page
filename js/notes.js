@@ -37,18 +37,23 @@ removeTask = (e) => {
     const i = e.target.id;
     tasks.splice(i, 1);
     localStorage.setItem('tasks', tasks);
-    taskList.removeChild(taskList.childNodes[i]);
+    initList();
 }
 
 initList = () => {
+    taskList.innerHTML = '';
     tasks.map((task, index) => {
         let newTask = document.createElement("li");
         newTask.className = "StartPage_item";
-        newTask.addEventListener("click", removeTask);
-        newTask.id = index;
-        // const close = '<button type="button" id="removeButton" class="StartPage_item_remove"><i class="material-icons">close</i></button>'
+        let close = document.createElement("button");
+        console.log(close);
+        close.className = "StartPage_item_remove";
+        close.addEventListener("click", removeTask);
+        close.id = index;
+        close.innerHTML = '<i class="material-icons">close</i>';
         newTask.innerHTML = 
             '<p class="StartPage_item_text">' + task + '</p>';
+        newTask.appendChild(close);
         taskList.appendChild(newTask);
     })
 }
