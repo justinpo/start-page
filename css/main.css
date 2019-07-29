@@ -9,7 +9,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 15vh;
+  margin: 15vh auto;
+  max-width: 1600px;
 }
 
 .StartPage_info {
@@ -175,7 +176,7 @@
   justify-content: center;
   background: none;
   border: none;
-  color: #e94c35;
+  color: #ffffff36;
   visibility: hidden;
   opacity: 0;
   height: 24px;
@@ -188,5 +189,6 @@
 }
 
 .StartPage_item_remove:hover {
+  color: #e94c35;
   background-color: #e94c3566;
 }
