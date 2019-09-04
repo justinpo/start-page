@@ -1,12 +1,14 @@
+// constants
 const input = document.getElementById("input");
 const addButton = document.getElementById("addButton");
+const completeButton = document.getElementsByClassName("StartPage_item_complete");
 const taskList = document.getElementById("taskList");
+const taskTitle = document.getElementById("taskTitle");
 
-let tasks = [];
 
-if (localStorage.getItem("tasks")) {
+// functions
+tokenizeTasks = () => {
   const taskString = localStorage.getItem("tasks");
-  console.log(taskString);
   let tempString = "";
   let j = 0;
 
@@ -33,7 +35,7 @@ addTask = () => {
   }
 };
 
-removeTask = e => {
+completeTask = e => {
   const i = e.target.id;
   tasks.splice(i, 1);
   localStorage.setItem("tasks", tasks);
@@ -45,27 +47,43 @@ initList = () => {
   tasks.map((task, index) => {
     let newTask = document.createElement("li");
     newTask.className = "StartPage_item";
-    let close = document.createElement("button");
-    console.log(close);
-    close.className = "StartPage_item_remove";
-    close.addEventListener("click", removeTask);
-    close.id = index;
-    close.innerHTML = '<i class="material-icons">close</i>';
-    newTask.innerHTML = '<p class="StartPage_item_text">' + task + "</p>";
-    newTask.appendChild(close);
+    let complete = document.createElement("button");
+    complete.className = "StartPage_item_complete";
+    complete.addEventListener("click", completeTask);
+    complete.id = index;
+    complete.innerHTML = '<i class="StartPage_item_complete_icon" id="' + index + '">&#10004;</i>';
+    let text = document.createElement("p");
+    text.className = "StartPage_item_text"
+    text.innerHTML = task;
+    newTask.appendChild(complete);
+    newTask.appendChild(text);
     taskList.appendChild(newTask);
   });
+
+  taskList.className = "StartPage_list";
+  taskTitle.innerHTML = 'Tasks (' + tasks.length + ')';
+
+  if(taskList.offsetHeight > 280) {
+    taskList.className = "StartPage_list StartPage_list___scrollable";
+  }
 };
 
-if (tasks) initList();
+
+// main
+let tasks = [];
+
+if (localStorage.getItem("tasks"))
+  tokenizeTasks();
+
+if (tasks.length > 0)
+  initList();
+else
+  taskTitle.innerHTML = 'Tasks (0)';
 
 addButton.addEventListener("click", addTask);
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
+input.addEventListener("keyup", e => {
+  if (e.keyCode === 13 && !e.shiftKey) {
+    e.preventDefault();
     document.getElementById("addButton").click();
   }
 });

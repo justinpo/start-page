@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 15vh auto;
+  margin: 20vh auto 10vh;
   max-width: 1600px;
 }
 
@@ -21,13 +21,14 @@
 }
 
 .StartPage_time {
-  font-size: 9rem;
+  font-size: 8.25rem;
   margin-right: 36px;
 }
 
 .StartPage_date {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   opacity: 0.7;
+  font-weight: 500;
 }
 
 .StartPage_nav {
@@ -46,18 +47,16 @@
 }
 
 .StartPage_nav_group_title {
-  /* background-color: #444;
-    border-radius: 16px;
-    padding: 4px 16px; */
+  font-size: 1rem;
   padding: 0 0 4px 0;
   border-bottom: 2px dotted #a7a7a7;
-  text-transform: uppercase;
   width: fit-content;
   margin: 0 0 24px 0;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .StartPage_nav_group_link {
+  font-size: 0.875rem;
   color: #fff;
   opacity: 0.6;
   text-decoration: none;
@@ -72,12 +71,13 @@
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+  width: 400px;
 }
 
 .StartPage_textArea {
+  font-size: 0.875rem;
   border-radius: 8px;
-  background-color: #353535;
-  border-color: #353535;
+  background-color: #222222;
   color: #fff;
   width: 360px;
   padding: 16px;
@@ -85,7 +85,7 @@
   resize: none;
   font-weight: 500;
   line-height: 1.5;
-  border: 2px solid transparent;
+  border: 2px solid #3c3c3c;
 }
 
 .StartPage_textArea:focus {
@@ -97,8 +97,8 @@
   background-color: initial;
 }
 
-.StartPage_textArea:hover {
-  background-color: #403f3f;
+.StartPage_textArea:focus::placeholder {
+  opacity: 0.4;
 }
 
 .StartPage_button {
@@ -107,11 +107,11 @@
   align-self: flex-end;
   border: none;
   border-radius: 8px;
-  padding: 12px 36px;
+  padding: 10px 28px;
   font-weight: 600;
   cursor: pointer;
   margin: 24px 0;
-  background-color: transparent;
+  background-color: #464646;
   border: 2px solid #464646;
   color: #fff;
   transition: 0.3s ease;
@@ -120,7 +120,7 @@
 }
 
 .StartPage_button:hover {
-  background-color: #464646;
+  background-color: #3b3b3b;
 }
 
 .StartPage_button:focus {
@@ -137,9 +137,17 @@
   display: flex;
   flex-direction: column;
   padding: 0;
+  margin: 24px 0;
+}
+
+.StartPage_list___scrollable {
+  overflow-y: scroll;
+  max-height: 280px;
+  padding-right: 12px;
 }
 
 .StartPage_list_title {
+  font-size: 1rem;
   margin: 0;
   opacity: 0.6;
 }
@@ -147,7 +155,6 @@
 .StartPage_item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-weight: 500;
   background-color: #2d2d2d;
   padding: 16px;
@@ -156,39 +163,48 @@
   margin: 0 0 16px 0;
 }
 
-.StartPage_item:hover {
-  background-color: #3c3c3c;
+.StartPage_item:last-child {
+  margin-bottom: 0;
 }
 
-.StartPage_item:hover .StartPage_item_remove {
-  visibility: visible;
-  opacity: 1;
+.StartPage_item:hover {
+  background-color: #303030;
 }
 
 .StartPage_item_text {
   white-space: pre-wrap;
   line-height: 1.5;
+  font-size: 0.875rem;
 }
 
-.StartPage_item_remove {
+.StartPage_item_complete {
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
   border: none;
   color: #ffffff36;
-  visibility: hidden;
-  opacity: 0;
-  height: 24px;
-  width: 24px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
   transition: 0.3s ease;
-  outline: none;
+  margin-right: 16px;
+  border: 2px solid;
+  position: relative;
 }
 
-.StartPage_item_remove:hover {
-  color: #e94c35;
-  background-color: #e94c3566;
+.StartPage_item_complete:hover .StartPage_item_complete_icon,
+.StartPage_item_complete:focus .StartPage_item_complete_icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.StartPage_item_complete_icon {
+  position: absolute;
+  font-size: 24px;
+  color: #1fce6d;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease;
 }
